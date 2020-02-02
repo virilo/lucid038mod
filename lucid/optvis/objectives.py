@@ -188,6 +188,7 @@ def _dot_cossim(x, y, cossim_pow=0):
 @wrap_objective
 def direction(layer, vec, batch=None, cossim_pow=0):
   """Visualize a direction"""
+  print("vec class: ", vec.__class__)
   if batch is None:
     vec = vec[None, None, None]
     return lambda T: _dot_cossim(T(layer), vec)
